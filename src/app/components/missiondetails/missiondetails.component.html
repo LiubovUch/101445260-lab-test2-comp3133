@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="mission-detail-card">
+      <h2>{{ mission.mission_name }}</h2>
+      <img *ngIf="mission.links.mission_patch_small" [src]="mission.links.mission_patch_small" alt="Mission Patch" class="mission-patch"/>
+  
+      <p class="mission-description">{{ mission.details }}</p>
+  
+      <div class="rocket-info">
+        <h3>Rocket Details</h3>
+        <p><strong>Name:</strong> {{ mission.rocket.rocket_name }}</p>
+        <p><strong>Type:</strong> {{ mission.rocket.rocket_type }}</p>
+      </div>
+  
+      <div class="mission-links">
+        <a *ngIf="mission.links.article_link" [href]="mission.links.article_link" target="_blank" class="link-button">Article</a>
+        <a *ngIf="mission.links.wikipedia" [href]="mission.links.wikipedia" target="_blank" class="link-button">Wikipedia</a>
+        <a *ngIf="mission.links.video_link" [href]="mission.links.video_link" target="_blank" class="link-button">Video</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>SpaceX Launches</h2>
+  
+    <div class="filter-container">
+      <input type="text" [(ngModel)]="year" (input)="onYearChange($event)" placeholder="Enter launch year" />
+      <button (click)="filterMissions()">Search</button>
+    </div>
+  
+    <div *ngFor="let mission of filteredMissions" class="mission-card">
+      <img [src]="mission.links.mission_patch_small" alt="Mission Patch" />
+      <h3>{{ mission.mission_name }}</h3>
+      <p>Flight Number: {{ mission.flight_number }}</p>
+      <p>Launch Year: {{ mission.launch_year }}</p>
+      <p>{{ mission.details }}</p>
+      <a [routerLink]="['/missiondetails', mission.flight_number]">View Details</a>
+    </div>
+  </div>
+  
